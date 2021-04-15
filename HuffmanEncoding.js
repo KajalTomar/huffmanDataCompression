@@ -58,7 +58,7 @@ class HuffmanEncoding {
         for (let i=0; i < keys.length; i++){
             let percentage = (frequencyOfChars.get(keys[i]))/this.contents.length;
             frequencyOfChars.put(keys[i],percentage);
-            // console.log("Char " + keysAsString[i] + " has frequency of " + frequencyOfChars.get(keys[i]));
+            console.log("Char " + keysAsString[i] + " has frequency of " + frequencyOfChars.get(keys[i]));
         }
 
         return frequencyOfChars;
