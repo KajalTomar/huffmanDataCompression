@@ -13,52 +13,24 @@ class TreeNode {
     //------------------------------------------------------
     // constructor
     //
-    // PURPOSE:     constructor for the TreeNode class.
-    //              creates this TreeNode based on the
-    //              arguments received.
+    // PURPOSE:     constructor for the TreeNode class. Throws
+    //              an error if someone tries to create an
+    //              instance of this class.
+    // PARAMETER:
+    //              the weight to store
     //------------------------------------------------------
-    constructor(firstArgument, secondArgument) {
-        if(arguments.length === 1){
-            // this is a leaf node, it has a label (single character)
-            // and no children
+    constructor(givenWeight) {
+        this.weight = givenWeight;
 
-            this.label = firstArgument;
+        // can't create an instance of TreeNode, but can create an concrete child classes.
+        if(this.constructor === TreeNode){
+            throw new Error("Trying to create a TreeNode object, but we want TreeNode to be an abstract class!");
         }
-        else if(arguments.length === 2) {
-            // this is an internal node (so it's not labeled with any data)
-            // it it has two children nodes
-        }
-        else {
-            // not sure
-        }
+
     } // constructor
 
-    //------------------------------------------------------
-    // getData
-    //
-    // PURPOSE:     to get the data
-    // RETURNS:
-    //              data
-    //------------------------------------------------------
-    get getLabel(){
-        let labelToReturn = null;
-
-        if(this.label){
-            labelToReturn =  this.label;
-        }
-
-        return labelToReturn;
-    }
-
-    //------------------------------------------------------
-    // getNext
-    //
-    // PURPOSE:     to get the the next TreeNode
-    // RETURNS:
-    //              next
-    //------------------------------------------------------
-    get getNext(){
-
+    get getWeight(){
+        return this.weight;
     }
 
 } // TreeNode
