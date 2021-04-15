@@ -26,9 +26,20 @@ class TreeNode {
         if(this.constructor === TreeNode){
             throw new Error("Trying to create a TreeNode object, but we want TreeNode to be an abstract class!");
         }
+        if(givenWeight > 1 || givenWeight < 0){
+            throw new Error("Can't assign a negative weight or a weight over 1");
+        }
+
 
     } // constructor
 
+    //------------------------------------------------------
+    // getWeight
+    //
+    // PURPOSE:     to get the weight of this node.
+    // RETURNS:
+    //              the weight
+    //------------------------------------------------------
     get getWeight(){
         return this.weight;
     }

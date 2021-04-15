@@ -22,7 +22,7 @@ class Dictionary {
     //              givenSize - desired size of the dictionary
     //------------------------------------------------------
     constructor(givenSize) {
-        if (arguments.length === 1 && givenSize instanceof Number && givenSize  > 0) {
+        if (arguments.length === 1 && givenSize  > 0) {
             // only accept integers greater than one as givenSize
 
             this.size = givenSize;

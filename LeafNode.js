@@ -3,7 +3,8 @@
 //
 // Author:  Kajal Tomar, 7793306
 //
-// REMARKS: concrete subclass of TreeNode.
+// REMARKS: concrete subclass of TreeNode. For nodes that
+//          are leaf nodes.
 //----------------------------------------------------------
 
 "use strict";
@@ -14,9 +15,9 @@ class LeafNode extends TreeNode{
     //------------------------------------------------------
     // constructor
     //
-    // PURPOSE: constructor for the LeafNode class.
+    // PURPOSE:     constructor for the LeafNode class.
     // PARAMETER:
-    //              the key to store (so we can hash it needed)
+    //              the weight and label to store at this node
     //------------------------------------------------------
     constructor(weight, label) {
         super(weight)
@@ -34,9 +35,9 @@ class LeafNode extends TreeNode{
     //------------------------------------------------------
     // getLabel
     //
-    // PURPOSE:     to get the data
+    // PURPOSE:     to get the label
     // RETURNS:
-    //              data
+    //              label
     //------------------------------------------------------
     getLabel(){
         return this.label;

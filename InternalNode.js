@@ -3,7 +3,8 @@
 //
 // Author:  Kajal Tomar, 7793306
 //
-// REMARKS: concrete subclass of TreeNode. 
+// REMARKS: concrete subclass of TreeNode. For nodes that
+//          are internal nodes.
 //----------------------------------------------------------
 
 "use strict";
@@ -14,28 +15,21 @@ class InternalNode extends TreeNode{
     //------------------------------------------------------
     // constructor
     //
-    // PURPOSE: constructor for the InternalNode class.
+    // PURPOSE:     constructor for the InternalNode class.
     // PARAMETER:
-    //              the key to store (so we can hash it needed)
+    //              two Huffman tree objects
     //------------------------------------------------------
-    constructor(subtree0, subtree1) {
-        if(('compareTo' in subtree0 && typeof (subtree0.compareTo) === 'function') &&
-            (('compareTo' in subtree1 && typeof (subtree1.compareTo) === 'function'))) {
+    constructor(leftSubtree, rightSubtree) {
+        if(('compareTo' in leftSubtree && typeof (leftSubtree.compareTo) === 'function') &&
+            (('compareTo' in rightSubtree && typeof (rightSubtree.compareTo) === 'function'))) {
             // this is an internal node and we have received two Huffman Trees as arguments
 
-            super((subtree0.getRoot).getWeight + (subtree1.getRoot).getWeight);
-            let compareToResult = subtree0.compareTo(subtree1);
+            // weight of the internal node is the sum of the weights of the children nodes
+            super((leftSubtree.getRoot).getWeight + (rightSubtree.getRoot).getWeight);
 
-            if(compareToResult === 1) {
-                this.left = subtree1;
-                this.right = subtree0;
-            }
-            else {
-                this.left = subtree0;
-                this.right = subtree1;
-            }
+            this.left = leftSubtree;
+            this.right = rightSubtree;
         }
-
         else {
             throw new Error("You must send the weight and two HuffmanTees to create an internal tree")
         }
@@ -64,53 +58,6 @@ class InternalNode extends TreeNode{
     getRightChild(){
         return this.right.getRoot;
     }
-
-    // //------------------------------------------------------
-    // // getParent
-    // //
-    // // PURPOSE:     to get the parent if it exists
-    // // RETURNS:
-    // //              TreeNode  parent if it exists, null
-    // //              otherwise
-    // //------------------------------------------------------
-    // get getParent(){
-    //     return this.parent;
-    // }
-
-
-    //------------------------------------------------------
-    // setLeft
-    //
-    // PURPOSE:     to set the left child
-    // PARAMETER:
-    //              the new child TreeNode
-    //------------------------------------------------------
-    set setLeftChild(newChild){
-        this.left =  newChild;
-    }
-
-    //------------------------------------------------------
-    // setLeft
-    //
-    // PURPOSE:     to set the right child
-    // PARAMETER:
-    //              the new child TreeNode
-    //------------------------------------------------------
-    set setRightChild(newChild){
-        this.right =  newChild;
-    }
-
-    // //------------------------------------------------------
-    // // setParent
-    // //
-    // // PURPOSE:     to set the parent
-    // // PARAMETER:
-    // //              the new parent TreeNode
-    // //------------------------------------------------------
-    // set setParent(newParent){
-    //     this.right =  this.parent;
-    // }
-
 
 } // InternalNode
 
