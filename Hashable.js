@@ -5,7 +5,7 @@
 //
 // REMARKS: abstract parent class of
 //          hash classes. Specifies methods
-//          that concerete hash classes
+//          that concrete hash classes
 //          must implement.
 //----------------------------------------------------------
 "use strict";

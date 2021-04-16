@@ -3,7 +3,7 @@
 //
 // Author:  Kajal Tomar, 7793306
 //
-// REMARKS: implementaion of a Linked
+// REMARKS: implementation of a Linked
 //          List that only holds
 //          Hashable objects.
 //----------------------------------------------------------

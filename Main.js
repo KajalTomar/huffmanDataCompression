@@ -1,10 +1,10 @@
 //-----------------------------------------
-// NAME		: Kajal Tomar
+// NAME		        : Kajal Tomar
 // STUDENT NUMBER	: 7793306
-// COURSE		: COMP 2150
-// INSTRUCTOR	: Mike Domaratzki
-// ASSIGNMENT	: assignment 4
-// QUESTION	: question 1
+// COURSE		    : COMP 2150
+// INSTRUCTOR	    : Mike Domaratzki
+// ASSIGNMENT	    : assignment 4
+// QUESTION	        : question 1
 //
 // REMARKS: This is the main file
 //          that creates and runs the
@@ -13,11 +13,18 @@
 
 import HuffmanEncoding from "./HuffmanEncoding.js";
 
-
+//------------------------------------------------------
+// main
+//
+// PURPOSE:     creates a HuffmanEncoding object and
+//              gives it the name of the file to encode.
+//              Calls the encode method to encode the file.
+//------------------------------------------------------
 function main(){
-    let testRun = new HuffmanEncoding('test.txt');
+    let fileName = 'test.txt';
+    let testRun = new HuffmanEncoding(fileName);
     testRun.encode();
 }
 
-main();
+main(); // executable line
 
