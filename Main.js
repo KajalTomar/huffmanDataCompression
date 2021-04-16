@@ -21,7 +21,8 @@ import HuffmanEncoding from "./HuffmanEncoding.js";
 //              Calls the encode method to encode the file.
 //------------------------------------------------------
 function main(){
-    let fileName = 'test.txt';
+    let fileName = 'hamlet.txt'; // change the input file name here
+
     let testRun = new HuffmanEncoding(fileName);
     testRun.encode();
 }
