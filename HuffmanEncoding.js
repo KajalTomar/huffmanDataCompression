@@ -25,18 +25,40 @@ class HuffmanEncoding {
     } // constructor
 
     encode(){
-        let outputFile = fs.writeFileSync((this.fileName+'.huff'),"");
-        let frequencyOfChars = this.#readFile();
+        fs.writeFileSync((this.fileName+'.huff'),"");
+        this.frequencyOfChars = this.#readFile();
+        this.allHuffmanTrees = new Array();
 
+        for(let i = 0; i<this.keys.length; i++){
+            this.allHuffmanTrees.push(new HuffmanTree(this.frequencyOfChars.get(this.keys[i]),this.keysAsString[i]));
+        }
 
-        // write in the codes for the huffman algorithm to the output file
+        while(this.allHuffmanTrees.length >= 2){
+            this.#sort();
+            console.log('--------------------------------------------')
+            console.log(this.allHuffmanTrees);
+            let tree1 = this.allHuffmanTrees.shift();
+            let tree2 = this.allHuffmanTrees.shift();
+            let newTree = new HuffmanTree(tree1,tree2);
+            this.allHuffmanTrees.push(newTree);
+
+        }
+
+        console.log(this.allHuffmanTrees);
+        // console.log(this.allHuffmanTrees);
+
+        for(let i = 0; i<this.contents.length; i++){
+            fs.appendFileSync(this.fileName+'.huff',(this.allHuffmanTrees[0].search(this.contents[i]))+' ');
+        }
+
+        fs.appendFileSync(this.fileName+'.huff','\n');
     }
 
     #readFile(){
         let frequencyOfChars = new Dictionary(6);
         this.contents = fs.readFileSync(this.fileName,'utf8');
-        let keys = new Array();
-        let keysAsString = new Array(); // delete later
+        this.keys = new Array();
+        this.keysAsString = new Array();
 
         for (let i=0; i < this.contents.length; i++){
             let charAti = new StringHash(this.contents.charAt(i));
@@ -45,8 +67,8 @@ class HuffmanEncoding {
             if(frequencyOfChars.contains(charAti)){
                 frequency = frequencyOfChars.get(charAti)+1;
             } else {
-                keys.push(charAti);
-                keysAsString.push(this.contents.charAt(i));
+                this.keys.push(charAti);
+                this.keysAsString.push(this.contents.charAt(i));
             }
 
             frequencyOfChars.put(charAti,frequency);
@@ -55,14 +77,30 @@ class HuffmanEncoding {
             // console.log("Char " + this.contents.charAt(i) + " has frequency of " + frequencyOfChars.get(charAti));
         }
 
-        for (let i=0; i < keys.length; i++){
-            let percentage = (frequencyOfChars.get(keys[i]))/this.contents.length;
-            frequencyOfChars.put(keys[i],percentage);
-            console.log("Char " + keysAsString[i] + " has frequency of " + frequencyOfChars.get(keys[i]));
+        for (let i=0; i < this.keys.length; i++){
+            let percentage = (frequencyOfChars.get(this.keys[i]))/this.contents.length;
+            frequencyOfChars.put(this.keys[i],percentage);
+            // console.log("Char " +  this.keysAsString[i] + " has frequency of " + frequencyOfChars.get(this.keys[i]));
         }
 
         return frequencyOfChars;
+    } // read file
+
+    #sort(){
+        this.allHuffmanTrees.sort(function (a, b) {
+            let result = 0;
+            if (a.compareTo(b) === -1) {
+                result = -1;
+            } else if (a.compareTo(b) === 1) {
+                result = 1;
+            }
+            return result;
+        });
+
+        this.allHuffmanTrees.sort();
     }
+
+
 }
 
 export default HuffmanEncoding;

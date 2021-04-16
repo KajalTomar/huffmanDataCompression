@@ -134,24 +134,23 @@ class HuffmanTree{
         if(weightDifference === 0){
             // same weight so we must look at the characters
 
-            let otherTreeLabels = otherTree.getLabels();  // all the labels of the other tree
-            let checkUpTo = Math.min(otherTree.totalLeaves(),this.totalLeaves()); // so we don't look at an out of range index
             let i = 0; // start at position 0
             let comparisonResult = 0; // so we know that we found a value for the result
 
-            // loop through until we've checked all the values (which will never happen)
-            // but just in case
-            while(i < checkUpTo && comparisonResult === 0){
-                if(this.allLabels[i] < otherTreeLabels[i]){
-                    // this tree has smallest first character
-                    comparisonResult = -1;
-                }
-                else if (otherTreeLabels[i] < this.allLabels[i]) {
-                    // other tree has smallest first character
-                    comparisonResult = 1;
-                }
+            let otherTreeLabels = new Array();
+            let thisTreeLabels = new Array();
 
-                i++;
+            Object.assign(otherTreeLabels, otherTree.getLabels());
+            Object.assign(thisTreeLabels, this.allLabels);
+
+            otherTreeLabels.sort();
+            thisTreeLabels.sort();
+
+            if(thisTreeLabels[0] < otherTreeLabels[0]){
+                comparisonResult = -1;
+            }
+            else if(otherTreeLabels[0] < thisTreeLabels[0]){
+                comparisonResult = 1;
             }
 
             result = comparisonResult;
