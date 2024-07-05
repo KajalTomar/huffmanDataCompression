@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS: HuffmanEncoding.js
-//
-// Author: Kajal Tomar, 7793306
-//
 // REMARKS: this class takes a txt file and outputs a .txt.huff
 //          file that contains the huffman encoding of the
 //          input file.
