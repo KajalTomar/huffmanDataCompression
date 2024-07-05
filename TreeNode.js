@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   TreeNode.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: Implementation of a node
 //          of a Huffman Tree
 //----------------------------------------------------------
