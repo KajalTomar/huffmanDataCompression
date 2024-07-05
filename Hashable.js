@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   Hashable.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: abstract parent class of
 //          hash classes. Specifies methods
 //          that concrete hash classes
