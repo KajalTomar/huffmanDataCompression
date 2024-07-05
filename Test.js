@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS: Tests.js
-//
-// Author: Kajal Tomar, 7793306
-//
 // REMARKS: tests for the Dictionary class.
 //          (using assert)
 //----------------------------------------------------------
