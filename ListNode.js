@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   ListNode.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: Implementation of a node
 //          that contains a Key-Value pair
 //          (array of size 2)
