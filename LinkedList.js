@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   LinkedList.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: implementation of a Linked
 //          List that only holds
 //          Hashable objects.
