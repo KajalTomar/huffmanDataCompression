@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   StringHash.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: concrete subclass of Hashable. Stores string keys
 //          and provides a hash method for the key. Also
 //          provides a method to compare this object to
