@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   Dictionary.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: implementation of a dictionary that
 //          holds Key-Value pairs as
 //          hash table.
