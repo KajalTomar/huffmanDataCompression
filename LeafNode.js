@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS:   LeafNode.js
-//
-// Author:  Kajal Tomar, 7793306
-//
 // REMARKS: concrete subclass of TreeNode. For nodes that
 //          are leaf nodes.
 //----------------------------------------------------------
