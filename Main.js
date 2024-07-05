@@ -1,11 +1,4 @@
 //-----------------------------------------
-// NAME		        : Kajal Tomar
-// STUDENT NUMBER	: 7793306
-// COURSE		    : COMP 2150
-// INSTRUCTOR	    : Mike Domaratzki
-// ASSIGNMENT	    : assignment 4
-// QUESTION	        : question 1
-//
 // REMARKS: This is the main file
 //          that creates and runs the
 //          huffmanEncoding.
