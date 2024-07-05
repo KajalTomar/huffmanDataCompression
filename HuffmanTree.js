@@ -1,8 +1,4 @@
 //----------------------------------------------------------
-// CLASS: HuffmanTree.js
-//
-// Author: Kajal Tomar, 7793306
-//
 // REMARKS: this class creates and represents a Huffman tree.
 //----------------------------------------------------------
 "use strict";
